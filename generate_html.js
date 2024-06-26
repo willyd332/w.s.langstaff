@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const csv = require('csv-parser');
+const { JSDOM } = require('jsdom');
 
 const inputFile = path.join(__dirname, 'publications.csv');
 const indexPath = path.join(__dirname, 'index.html');
@@ -36,19 +37,18 @@ const generateWorkItems = (data) => {
     ).join('');
 };
 
-// Update the index.html file with the new work items
+// Update the index.html file with the new work items using DOM manipulation
 const updateHTMLFile = (filePath, newContent) => {
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) throw err;
 
-        const startTag = '<section id="work">';
-        const endTag = '</section>';
-        const startIndex = data.indexOf(startTag) + startTag.length;
-        const endIndex = data.indexOf(endTag);
+        const dom = new JSDOM(data);
+        const document = dom.window.document;
+        const workSection = document.querySelector('#work');
 
-        const updatedHTML = data.slice(0, startIndex) + newContent + data.slice(endIndex);
+        workSection.innerHTML += newContent;
 
-        fs.writeFile(filePath, updatedHTML, 'utf8', (err) => {
+        fs.writeFile(filePath, dom.serialize(), 'utf8', (err) => {
             if (err) throw err;
             console.log('index.html has been updated!');
         });

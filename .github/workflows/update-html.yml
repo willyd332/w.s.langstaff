@@ -16,14 +16,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
-        python-version: 3.x
+        node-version: '14'  # or any other version you need
 
     - name: Install dependencies
       run: |
-        npm install csv-parser fs
+        npm install csv-parser fs jsdom
 
     - name: Generate HTML from CSV
       run: |
