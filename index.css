@@ -96,19 +96,19 @@ a:hover {
 }
 
 .work-item .journal-name {
-  color: #FF000C;
-  font-size: 15px;
+  color: #050505;
+  font-size: 17px;
   margin-top: 5px;
   font-family: 'Garamond', sans-serif;
-  font-style: italic;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-style: italic;
 }
 
 .work-item .article-title {
-  font-weight: bold;
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: 500;
   color: #050505;
   font-family: 'Garamond', sans-serif;
   display: -webkit-box;
@@ -119,7 +119,8 @@ a:hover {
 }
 
 .work-item .publication-date {
-  font-size: 12px;
+  font-size: 17px;
+  font-weight: 300;
   color: #919191;
   font-family: 'Garamond', sans-serif;
 }
