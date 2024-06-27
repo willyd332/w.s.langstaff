@@ -10,7 +10,6 @@ const indexPath = path.join(__dirname, 'index.html');
 const workItemTemplate = (link, image, journal, title, date) => `
 <div class="work-item">
     <a target="_blank" href="${link}">
-        <! -- <img src="${image}" alt="Article Image"> -->
         <span class="article-title">${title}</span> — <span class="journal-name">${journal}</span> — <span class="publication-date">${date}</span>
     </a>
 </div>

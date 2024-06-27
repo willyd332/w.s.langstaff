@@ -66,15 +66,15 @@ a:hover {
 }
 
 #work {
-  width: 70%;
-  max-width: 700px;
-  display: flex;
-  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1000px;
+  display: block;
   justify-content: left;
 }
 
 .work-item {
-  width: 30%;
+  display: block;
+  width: 100%;
   padding: 0.5%;
   margin: 10px 10px 10px 0;
   box-sizing: border-box;
@@ -82,8 +82,7 @@ a:hover {
 }
 
 .work-item a {
-  display: block;
-  text-decoration: none;
+  display: inline;
   color: #050505;
   font-size: 17px;
   font-family: 'Garamond', sans-serif;
@@ -96,30 +95,30 @@ a:hover {
 }
 
 .work-item .journal-name {
-  color: #050505;
-  font-size: 17px;
-  margin-top: 5px;
-  font-family: 'Garamond', sans-serif;
-  white-space: nowrap;
+  max-width: 30%;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #050505;
+  font-size: 17px;
+  font-family: 'Garamond', sans-serif;
   font-style: italic;
 }
 
 .work-item .article-title {
   font-size: 17px;
+  max-width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 500;
   color: #050505;
   font-family: 'Garamond', sans-serif;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* Number of lines to show */
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .work-item .publication-date {
   font-size: 17px;
+  max-width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 300;
   color: #919191;
   font-family: 'Garamond', sans-serif;
@@ -131,6 +130,22 @@ a:hover {
 
 .work-item:hover .article-title {
   color: #5844FC;
+}
+
+.work-item .journal-name {
+  transition: color 0.3s ease-in-out;
+}
+
+.work-item:hover .journal-name {
+  color: #5844FC;
+}
+
+.work-item .publication-date {
+  transition: color 0.4s ease-in-out;
+}
+
+.work-item:hover .publication-date {
+  color: #7A6AFC;
 }
 
 @media (max-width: 768px) {
