@@ -66,7 +66,7 @@ a:hover {
 }
 
 #work {
-  max-width: 1000px;
+  max-width: 800px;
 }
 
 .work-item {
@@ -115,11 +115,6 @@ a:hover {
   font-style: italic;
 }
 
-.dash {
-  display: inline-block;
-  vertical-align: middle;
-}
-
 .work-item .publication-date {
   vertical-align: middle;
   font-size: 17px;
@@ -132,6 +127,11 @@ a:hover {
   font-style: oblique;
 }
 
+.dash {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .work-item .article-title {
   transition: color 0.2s ease-in-out;
 }
@@ -141,7 +141,7 @@ a:hover {
 }
 
 .work-item .journal-name {
-  transition: color 0.3s ease-in-out;
+  transition: color 0.25s ease-in-out;
 }
 
 .work-item:hover .journal-name {
@@ -149,9 +149,87 @@ a:hover {
 }
 
 .work-item .publication-date {
-  transition: color 0.4s ease-in-out;
+  transition: color 0.25s ease-in-out;
 }
 
 .work-item:hover .publication-date {
   color: #7A6AFC;
+}
+
+.work-item {
+  transition: color 0.3s ease-in-out;
+}
+
+.work-item:hover {
+  border-bottom: 1px solid #7A6AFC;
+}
+
+
+@media (max-width: 2500px) {
+  .work-item {
+    text-wrap: pretty;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid black;
+  }
+
+  .work-item .article-title {
+    text-wrap: nowrap;
+    width: 85%;
+    max-width: 100%;
+  }
+  
+  .work-item .journal-name {
+    width: 70%;
+    max-width: 70%;
+    text-wrap: nowrap;
+  }
+  
+  .work-item .publication-date {
+    display: inline-block;
+    width: 25%;
+    max-width: 25%;
+    text-align: right;
+    text-wrap: nowrap;
+  }
+
+  .dash {
+    display: none;
+    vertical-align: middle;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .work-item {
+    text-wrap: pretty;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid black;
+  }
+
+  .work-item .article-title {
+    text-wrap: nowrap;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .work-item .journal-name {
+    width: 70%;
+    max-width: 70%;
+    text-wrap: nowrap;
+  }
+  
+  .work-item .publication-date {
+    display: inline-block;
+    width: 25%;
+    max-width: 25%;
+    text-align: right;
+    text-wrap: nowrap;
+  }
+
+  .dash {
+    display: none;
+    vertical-align: middle;
+  }
 }
