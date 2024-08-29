@@ -1,5 +1,5 @@
 /* Reset default browser styles */
-body, h1, p {
+body, h1, h3, p {
   margin: 0;
   padding: 0;
 }
@@ -9,16 +9,24 @@ body {
   background-color: #FFFFFF;
 }
 
+p {
+  max-width: 55vw;
+  /* min-width: 400px; */
+  text-align: justify;
+}
+
 /* Add space around the div with id "hero" */
 #hero {
   margin: 5%;
+  margin-left: 10%;
+  margin-right: 15%;
   padding: 2%;
   align-items: center;
 }
 
 #spacer {
-  margin: 20px;
-  padding: 20px;
+  margin: 10px;
+  padding: 10px;
 }
 
 /* Center the content */
@@ -34,7 +42,7 @@ h1 {
   font-size: 36px;
   font-weight: bold;
   color: #000000;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-family: 'Trebuchet MS', sans-serif;
 }
 
@@ -46,9 +54,16 @@ h2 {
   font-family: 'Trebuchet MS', sans-serif;
 }
 
+h3 {
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 20px;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
 /* Style the paragraph */
 p,li{
-  font-size: 17px;
+  font-size: 18px;
   color: #050505;
   font-family: 'Garamond', sans-serif;
   margin-bottom: 9px;
@@ -65,18 +80,43 @@ a:hover {
   color: #5844FC;
 }
 
+a {
+  transition: color 0.3s ease-in-out;
+}
+
 #work {
   max-width: 800px;
 }
 
+.b1 {
+  display: inline-block;
+  vertical-align: top;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.b2 {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px; /* Space between the image and the text */
+}
+
+.b1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image fits within the square */
+}
+
 .work-item {
   display: block;
-  text-wrap: nowrap;
+  text-wrap: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 0.5%;
   margin: 10px 10px 10px 0;
   box-sizing: border-box;
+  max-width: 55vw;
   min-width: 150px
 }
 
@@ -84,7 +124,7 @@ a:hover {
   vertical-align: middle;
   display: inline;
   color: #050505;
-  font-size: 17px;
+  font-size: 13px;
   font-family: 'Garamond', sans-serif;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -93,7 +133,6 @@ a:hover {
 .work-item .article-title {
   vertical-align: middle;
   display: inline-block;
-  font-size: 17px;
   max-width: 40%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -105,11 +144,10 @@ a:hover {
 .work-item .journal-name {
   vertical-align: middle;
   display: inline-block;
-  max-width: 30%;
+  max-width: 28%;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #050505;
-  font-size: 17px;
   font-weight: 400;
   font-family: 'Garamond', sans-serif;
   font-style: italic;
@@ -117,10 +155,7 @@ a:hover {
 
 .work-item .publication-date {
   vertical-align: middle;
-  font-size: 17px;
   max-width: 10%;
-  overflow: hidden;
-  text-overflow: ellipsis;
   font-weight: 400;
   color: #050505;
   font-family: 'Garamond', sans-serif;
@@ -138,6 +173,25 @@ a:hover {
 
 .work-item:hover .article-title {
   color: #5844FC;
+}
+
+.projdesc {
+  margin-top: 10px;
+  display: block;
+  height: 2em; /* Approx. 3 lines */
+  overflow: scroll;
+  text-overflow: ellipsis;
+  line-height: 1.5em;
+  max-width: 45vw;
+  text-align: justify;
+}
+
+.work-item:hover .projdesc {
+  height: 10em;
+}
+
+.work-item .projdesc {
+  transition: height 0.5s ease-in-out;
 }
 
 .work-item .journal-name {
@@ -166,6 +220,7 @@ a:hover {
 
 
 @media (max-width: 2500px) {
+
   .work-item {
     text-wrap: pretty;
     margin-bottom: 15px;
@@ -201,8 +256,14 @@ a:hover {
 
 @media (max-width: 600px) {
 
+  p {
+    font-size: 15px;
+    max-width: 90vw;
+  }
+
   .work-item {
     text-wrap: pretty;
+    max-width: 90vw;
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid black;
@@ -232,4 +293,9 @@ a:hover {
     display: none;
     vertical-align: middle;
   }
+
+  .projdesc {
+    max-width: 80vw;
+  }
+  
 }
