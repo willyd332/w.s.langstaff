@@ -11,7 +11,6 @@ body {
 
 p {
   max-width: 55vw;
-  /* min-width: 400px; */
   text-align: justify;
 }
 
@@ -63,7 +62,7 @@ h3 {
 
 /* Style the paragraph */
 p,li{
-  font-size: 18px;
+  font-size: 17px;
   color: #050505;
   font-family: 'Garamond', sans-serif;
   margin-bottom: 9px;
